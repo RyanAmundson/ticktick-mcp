@@ -1,0 +1,12 @@
+services:
+  ticktick-mcp:
+    build: .
+    container_name: ticktick-mcp
+    restart: unless-stopped
+    ports:
+      - "8765:8000"
+    environment:
+      - TICKTICK_CLIENT_ID=${TICKTICK_CLIENT_ID}
+      - TICKTICK_CLIENT_SECRET=${TICKTICK_CLIENT_SECRET}
+      - TICKTICK_ACCESS_TOKEN=${TICKTICK_ACCESS_TOKEN}
+      - TICKTICK_REFRESH_TOKEN=${TICKTICK_REFRESH_TOKEN}
